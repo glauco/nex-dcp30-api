@@ -15,7 +15,7 @@ class App < Sinatra::Base
   register Sinatra::ActiveRecordExtension
 
   get '/' do
-    "Hello World"
+    "NEX DCP30 API"
   end
 
   configure do
