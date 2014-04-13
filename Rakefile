@@ -1,6 +1,12 @@
 
+require 'active_record'
 require 'sinatra/activerecord/rake'
 require './app' 
+
+include ActiveRecord::Tasks
+
+DatabaseTasks.db_dir = 'db'
+DatabaseTasks.env = 'development'
 
 namespace :data do
   desc "Downloads data of The NASA Earth Exchange (NEX) Downscaled Climate Projections (NEX-DCP31)"

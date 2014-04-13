@@ -14,14 +14,13 @@ class App < Sinatra::Base
   register Sinatra::ConfigFile
   register Sinatra::ActiveRecordExtension
 
-  config_file 'config/database.yml'
 
   get '/' do
     "Hello World"
   end
 
   configure do
-    set :database, "sqlite3:db/development.db"
+    config_file 'config/database.yml'
   end
 
   configure :development do
