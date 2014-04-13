@@ -1,12 +1,16 @@
-
+require 'rspec/core/rake_task'
 require 'active_record'
 require 'sinatra/activerecord/rake'
 require './app' 
 
 include ActiveRecord::Tasks
 
+RSpec::Core::RakeTask.new(:spec)
+
 DatabaseTasks.db_dir = 'db'
 DatabaseTasks.env = 'development'
+
+task :default => :spec
 
 namespace :data do
   desc "Downloads data of The NASA Earth Exchange (NEX) Downscaled Climate Projections (NEX-DCP31)"
@@ -16,6 +20,7 @@ namespace :data do
     sh "pushd tmp; #{wget} ; popd"
   end
 
+  desc "Imports data from all the downloaded csv files"
   task :import do
   end
 end

@@ -7,3 +7,5 @@ gem 'sinatra-activerecord'
 gem 'pg'
 gem 'rake'
 gem 'json'
+
+gem 'rspec'

@@ -1,17 +1,17 @@
 development:
-  adapter: "postgresql"
+  adapter: :postgresql
   host: "localhost"
   database: "development"
   encoding: "utf8"
 
 test:
-  adapter: "sqlite3"
-  database: sqlite3:db/test.db
-  pool: 5
-  timeout: 5000
+  adapter: :postgresql
+  host: "localhost"
+  database: "test"
+  encoding: "utf8"
 
 production:
-  adapter: sqlite3
-  database: db/production.db
-  pool: 5
-  timeout: 5000
+  adapter: :postgresql
+  host: "localhost"
+  database: "production"
+  encoding: "utf8"
